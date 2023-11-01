@@ -7,7 +7,7 @@ from models import Book
 
 @app.route('/book/api',methods = ['GET'])
 def book_list():
-    book_list = Book.query.all()  # select * from employee
+    book_list = Book.query.all()  # select * from book
     json_booklist = []
     if book_list:
         for bk in book_list:
@@ -27,7 +27,7 @@ def book_add():
                            author=reqdata.get("BOOK-AUTHOR"))
             db.session.add(bk)
             db.session.commit()
-            return json.dumps({"SUCCESS": f"Book {bk.id} Successfully Created...!"})
+            return json.dumps({"SUCCESS": f"Book {bk.id} Successfully added...!"})
         except BaseException as e:
             print(e.args)
     return json.dumps({"ERROR": f"Problem in Adding an Book"})
@@ -42,7 +42,7 @@ def book_delete(bkid):
             db.session.commit()
             return json.dumps({"SUCCESS": f"Book removed Successfully...!"})
         else:
-            return json.dumps({"ERROR": f"No Record with Given name for Delete "})
+            return json.dumps({"ERROR": f"No Record with Given id for Delete "})
     else:
         return json.dumps({"ERROR": f"Invalid ID"})
 
@@ -67,7 +67,7 @@ def book_search(bkid):
     if book:
         return json.dumps({"BOOK-ID": book.id, "Book_NAME": book.name, "BOOK-VENDER": book.vender,
                            "BOOK-LANG": book.lang, "BOOK-PRICE": book.price, "BOOK-AUTHOR": book.author})
-    return json.dumps({"ERROR": f"No Record with Given ID NO.{bkid} for Search"})@app.route('/book/api/<int:bkid>',methods = ['GET'])
+    return json.dumps({"ERROR": f"No Record with Given ID NO.{bkid} for Search"})
 
 
 
