@@ -25,7 +25,7 @@ A Flask-based REST API for managing a book inventory system with full CRUD opera
 ### Installation
 ```bash
 # Clone repository
-git clone [your-repo-url]
+git clone [repo-url]
 
 # Install dependencies
 pip install -r requirements.txt
