@@ -1,9 +1,12 @@
 # Book Management REST API (Foundational Backend Project)
 A Flask-based REST API for managing a book inventory system with full CRUD operations.
 
-### Note:
+## Overview
+
 This project was built as a foundational backend exercise to understand REST API design,
 ORM-based data access using SQLAlchemy, and relational database integration using MySQL.
+It focuses on clean API structure, database modeling, and request handling rather than production-scale features.
+
 
 ## Tech Stack
 - Python 3.x
@@ -18,6 +21,8 @@ ORM-based data access using SQLAlchemy, and relational database integration usin
 - ✅ Update book information
 - ✅ Delete books
 - ✅ List all books
+
+
 
 ## Setup
 
